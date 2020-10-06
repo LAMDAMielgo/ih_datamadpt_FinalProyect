@@ -1,0 +1,10 @@
+####
+
+geopandas
+geojson
+
+itertools=
+pandas
+numpy
+re
+folium
