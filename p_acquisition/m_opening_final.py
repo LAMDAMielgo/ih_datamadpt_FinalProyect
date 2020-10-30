@@ -133,5 +133,5 @@ def getting_final_geoframes(geometries_path):
         simplified_geom_file['geometry'] = simplified_geom_file['geometry'].simplify(10, preserve_topology=True)
 
         print(
-            f"\t{file.split('.')[0]} \tOPENED \tMemory Usage:\t{np.round(simplified_geom_file.memory_usage() / 1000000, 2)} Mb \t\tShape: {simplified_geom_file.shape}")
+            f"\t{file.split('.')[0]} \tOPENED \tMemory Usage:\t{np.round(simplified_geom_file.memory_usage().sum() / 1000000, 2)} Mb \t\tShape: {simplified_geom_file.shape}")
         return simplified_geom_file
