@@ -85,31 +85,27 @@ with c1:
                 "<span class= 'bold'><span class='title'> ·UQO· </span><br>"
                 "<span class= 'subtitle'> urban  quality  operational  tool <br>"
                 "~</span></span><br>"
-                "<span class= 'subtitle'> likeability of urban morphology based <br> on an <span class= 'bold'>open citizen survey</span></span></pre>"
+                "<span class= 'subtitle'> likeability of urban morphology based <br> on an <span class= 'bold'>open citizen survey</span></pre>"
                 , unsafe_allow_html=True)
 
     st.markdown("<pre class='highlight_text'>"
-                "<span class='cuerpo'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>"
-                "sed do eiusmod tempor incididunt ut labore et dolore magna <br>"
-                "aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br>"
-                "ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>"
-                "Duis aute irure dolor in reprehenderit in voluptate velit <br>"
-                "esse cillum dolore eu fugiat nulla pariatur. Excepteur <br>"
-                "sint occaecat cupidatat non proident, sunt in culpa qui <br>"
-                "officia deserunt mollit anim id est laborum</span></span></pre>"
+                "<span class='cuerpo'>This project facilitates the creation and extraction of <br>"
+                "knowledge that comes from collective intelligence thank <br>"
+                "to the application of two machine learning models. Thi is<br>"
+                "a tool that facilitates citizen action and provides<br>"
+                "insight to help in the decision making process of the<br>"
+                "development and management of our cities.</span></span></pre>"
                 , unsafe_allow_html=True)
+
+
 
     st.markdown(f"<span class='cuerpo'>URBAN QUALITY MAP KEY<br></span>"
                 f"<div class='legend' style='position: static; height: 20px;'>"
-                f"<span class='bold'> - {45 * '&nbsp;'} -> {45 * '&nbsp;'} + </span><br><br>"
-                "<br><span class='cuerpo'>FILTER CONTROLS<br> ~ <br>"
-                "To better understand the final clusterization, you can select two <br>"
-                "options: by types of urban morphology (stablish through Catastro's data <br>"
-                "clusterization or Mayority Use</span>", unsafe_allow_html=True)
-
+                f"<span class='bold'> - {100 * '&nbsp;'} + </span><br><br>"
+                "<br><span class='cuerpo'>FILTER CONTROLS<br> ~ <br>", unsafe_allow_html=True)
 
     # FILTERS FOR MAP IN HERE
-    uses_to_show = st.selectbox(f"MAIN CLUSTER USE", ('all', 'residential', 'terciary'))  # Change this
+    uses_to_show = st.selectbox(f"CHARACTERISTIC USE CLUSTER", ('all', 'residential', 'terciary'))  # Change this
     morpho_cluster = st.slider("URBAN MORPHOLOGY CLUSTERS", 0, 12)
 
     # !!!!!!!
@@ -140,17 +136,29 @@ st.markdown("""<style>
                 color: white;
             }</style>""", unsafe_allow_html=True)
 
-st.sidebar.markdown("<span class= 'bold'> CREDITS <br>~<br><br><br>"
-                    "Este proyecto ha sido posible gracias al proyecto <span class='bold'>[ARTURO](arutor) </span><br> realizado por: <br></span>"
-                    "300000kms<br>con<br>cotec_c<br>para<br>#Imperidble_03<br><br><br><br>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:24px'>&#11088;</p><br>"
+                    "<span class= 'bold'> CREDITS <br>~<br><br>"
+                    "This is my final proyect from IronHack Data Science's Bootcamp<br>~<br><br></span>"
+                    "This projects has been posible thanks to the efford and <br>"
+                    "open data made for "
+                    "<span class= 'bold'><a href='http://arturo.300000kms.net/'>ARTURO</a></span>"
+                    "<br> done by: <br><br>"
+                    "<span class= 'bold'> 300000kms + cotec_c </span>"
+                    "<br>for<br>"
+                    "<span class= 'bold'>#Imperidble_03</span><br><br><br>", unsafe_allow_html=True)
 
 
-st.sidebar.markdown(":metal:<br>Puedes obtener<br>el dataset de entrenamiento<br>"
-                    "<span class='bold'> [aqui](http://www.atnight.ws/_imperdible/out/votes.json) </span>" , unsafe_allow_html=True)
-st.sidebar.markdown("Última actualización:<br>30/07/2020", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:24px'>&#9889;</p>"
+                    "The public citizen survey<br>can be downloaded<br>"
+                    "<span class='bold'><a href='http://www.atnight.ws/_imperdible/out/votes.json'>here</a></span>"
+                    , unsafe_allow_html=True)
+st.sidebar.markdown("Last update:<br>30/07/2020", unsafe_allow_html=True)
 
-st.sidebar.markdown(":metal:<br>Participa<br><br>![](http://arturo.300000kms.net/img/qr.png)<br> "
-                    "la ciudad es tuya<br><br><br><br><br><br>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:24px'>&#10024;</p><br>"
+                    "Take part in the survey<br><br>"                                                              
+                    "<a href='http://arturo.300000kms.net/app/index.html'>"
+                    "<img border='0' src='http://arturo.300000kms.net/img/qr.png' width='150' height='150'></a>"
+                    "<br><br><br><br>", unsafe_allow_html=True)
 
 
 

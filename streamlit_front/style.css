@@ -6,15 +6,14 @@ body {
 /* HIGHLIGHTING BOXES */
 .highlight_text {
   background-color: #f6c9c8;
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   color: black;
   padding: 0.2rem;
 }
 .highlight_title {
   background-color: #350B82;
-  border-radius: 0.75rem;
-  padding: 1rem;
-
+  border-radius: 0rem;
+  padding: 1.50rem;
 }
 /* TEXT FORMATTING */
 .title {
@@ -39,6 +38,9 @@ body {
 .bold {
   font-weight: 800;
 }
+.semi-bold {
+  font-weight: 550;
+}
 /*BUTTONS AND SLIDERS FORMATTING */
 .stButton>button {
     font-weight: 900;
@@ -47,6 +49,9 @@ body {
     border-radius: 50%;
     height: 3em;
     width: 3em;
+}
+.reportview-container .markdown-text-container a{
+  color: #F5E6CB;
 }
 /*EXPANDER COLORS*/
 .st-by {
