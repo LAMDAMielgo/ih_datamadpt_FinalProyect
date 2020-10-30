@@ -16,6 +16,9 @@ def get_main_map(gfd, center_location, tile, color_palette):
     :return: enables html
     """
     # All layers to add MUST BE EPSG3857 for proyection compatibility
+    print(
+        f"\n-- Rendering Main Map ----------------------------------------------------------------------------------------------")
+
     m = folium.Map(
         location=center_location,
         zoom_start=14, max_zoom=16, min_zoom=13,
@@ -39,11 +42,12 @@ def get_main_map(gfd, center_location, tile, color_palette):
                                tooltip=gjson_popup,
                                style_function=lambda x, fillColor=fillColor: {
                                    'fillColor': fillColor,
-                                   'color': '#000000',
-                                   'weight': 0.1,
-                                   'fillOpacity': 0.95}
+                                   'color': fillColor,
+                                   'weight': 0.2,
+                                   'fillOpacity': 0.90}
                                ).add_to(m)
 
     Fullscreen().add_to(m)
-    print(f"\n-- Rendering Main Map ----------------------------------------------------------------------------------------------")
+    print(
+        f"\t MAIN MAP \tRENDERED --------------------------------------------------------------------------------")
     m.save(f'{MAP_SAVE_PATH}map_to_render.html')

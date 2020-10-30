@@ -1,21 +1,14 @@
 body {
     margin: 10;
-    font-family: "IBM str Sans",sans-serif;
-    font-size: 1rem;
     font-weight: 300;
     line-height: 1.25;
 }
-
+/* HIGHLIGHTING BOXES */
 .highlight_text {
   background-color: #f6c9c8;
   border-radius: 0.5rem;
   color: black;
   padding: 0.2rem;
-
-}
-
-.bold {
-  font-weight: 800;
 }
 .highlight_title {
   background-color: #350B82;
@@ -24,6 +17,7 @@ body {
 
   margin-bottom: 1rem;
 }
+/* TEXT FORMATTING */
 .title {
   font-width: 105%;
   font-size: 64px;
@@ -40,6 +34,9 @@ body {
   color: black;
   font-weight: 250;
   text-align: right;
+}
+.bold {
+  font-weight: 800;
 }
 /*BUTTONS AND SLIDERS FORMATTING */
 .stButton>button {
