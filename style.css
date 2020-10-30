@@ -1,15 +1,69 @@
-.highlight {
-  border-radius: 0.4rem;
-  color: white;
-  padding: 0.5rem;
+body {
+    margin: 10;
+    font-family: "IBM str Sans",sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+.highlight_text {
+  background-color: #f6c9c8;
+  border-radius: 0.5rem;
+  color: black;
+  padding: 0.2rem;
+
+}
+
+.bold {
+  font-weight: 800;
+}
+.highlight_title {
+  background-color: #350B82;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+
   margin-bottom: 1rem;
 }
-.bold {
-  font-weight: 700;
+.title {
+  font-width: 105%;
+  font-size: 64px;
+  color: #f63366;
 }
-.blue {
-  background-color: lightblue;
+.subtitle {
+  font-width: 90%;
+  font-size: 16px;
+  color: #f63366;
 }
-.red {
-  background-color: lightcoral;
+.cuerpo {
+  font-width: 75%;
+  font-size: 12px;
+  color: black;
+  font-weight: 250;
+  text-align: right;
+}
+/*BUTTONS AND SLIDERS FORMATTING */
+.stButton>button {
+    font-weight: 900;
+    font-size: 20px;
+    color: #F2ADB4;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+}
+/*EXPANDER COLORS*/
+.st-by {
+    color: #f63366;
+    text-align: right;
+}
+.stImage> {
+    margin-right: 70px;
+    margin-left: 70px;
+}
+
+/* LEGEND FOR COLUMN1 */
+.legend {
+    background-image: linear-gradient(90deg, hsla(261, 84%, 28%, 1) 0%,
+                                             hsla(344, 76%, 75%, 1) 50%,
+                                             hsla(39, 68%, 88%, 1) 99%,
+                                             hsla(37, 84%, 69%, 1) 100%);
 }
