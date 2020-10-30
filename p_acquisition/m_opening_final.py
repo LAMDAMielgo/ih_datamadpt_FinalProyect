@@ -20,6 +20,7 @@ import seaborn as sns
 CLEAN_DATA_PATH = 'data/clean'  # three files (there should be only two: catastro and arturo). DIFFERENT SHAPES
 LABLD_DATA_PATH = 'data/labelled'  # two files: clusters from catastro and clusters from all data. DIFFERENT SHAPES
 MODEL_DATA_PATH = 'data/modelbase'  # one file: data with all columns from arturo and catastro. SHAPE 90.5% of Catastro Data
+FINAL_DATA_PATH = 'data/final_streamlit'
 
 NAMES_DICT = {
     'cadastralparcel.geojson': 'CAD_PA',
@@ -33,6 +34,8 @@ NAMES_DICT = {
     'arturo.geojson': 'ARTURO_DF',
     'building_polygs.geojson': 'BU_POLYGONS',
     'building_parcls.geojson': 'BU_PARCELS',
+
+    'bu_parcel_epsg3857.geojson': 'BU_PARCELS',
 }
 
 MADRID_EPSG = 25830
@@ -107,3 +110,28 @@ def getting_final_geoframes(geometries_path, dataframe_path, gdfs_labels):
         print(
             f"\t{file.split('.')[0]} \tOPENED \tMemory Usage:\t{np.round(geom_file.memory_usage().sum() / 1000000, 2)} Mb \t\tShape: {geom_file.shape}")
         yield geom_file
+
+
+def getting_final_geoframes(geometries_path):
+    """
+    INPUT:
+    OUTPUT:
+    """
+    # List with necessary files
+    geom_bu_files = [f for f in listdir(geometries_path) if isfile(join(geometries_path, f)) and re.findall('bu',
+                                                                                                            f)]  # only retrieves files names with 'building' in them
+    print(
+        f"\n-- Opening {len(geom_bu_files)} files in {geometries_path} --------------------------------------------------------------")
+
+    for file in geom_bu_files:
+        # CHANGE NAME OF PARCELS FILE IF CONVINIENT
+        # Constructing a GeoDatFrame and giving them a name
+        # Note: yield directly from gpd.read_files doesnt work like in pandas, returns constructor
+        geom_file = gpd.read_file(f"{geometries_path}/{file}").set_index('ID')
+        geom_file.name = NAMES_DICT[file]
+        simplified_geom_file = geom_file.dissolve(by='cluster_all')
+        simplified_geom_file['geometry'] = simplified_geom_file['geometry'].simplify(10, preserve_topology=True)
+
+        print(
+            f"\t{file.split('.')[0]} \tOPENED \tMemory Usage:\t{np.round(simplified_geom_file.memory_usage() / 1000000, 2)} Mb \t\tShape: {simplified_geom_file.shape}")
+        return simplified_geom_file
