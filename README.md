@@ -11,6 +11,9 @@ ciudad de Madrid, realizado por Prointec dentro del marco de la revisión del PG
 
 
 ---------------------------------------------------------------------------
+### Project Result
+![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
+
 --------------------------------------------------------------------------------------
 **¿Por qué medir la calidad del paisaje urbano?**
 
@@ -38,6 +41,9 @@ permite incorporar la opinión pública en el diagnóstico de su ciudad, fomenta
 y las políticas públicas abiertas. Así mismo, la elaboración de este tipo de planes, 
 constituyen un compromiso colectivo para proyecta la imagen de la ciudad.
 
+### :star: Project Pipeline
+![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109612/WhatsApp_Image_2020-10-31_at_02.03.23_rwukmf.jpg)
+
 --------------------------------------------------------------------------------------
 ### DOCUMENTATION SOURCES
 * [Encuesta Abierta sobre Calidad del Espacio Público](http://arturo.300000kms.net/#1)
@@ -63,8 +69,7 @@ disponibles, obtenidas a partir de qGIS:
 * Cadastral Parcels
 * 28900 
 
-
---------------------------------------------------------------------------------------
+----
 ### Links de interés
 Experiencias anteriores basadas en NYC:
 
@@ -76,34 +81,23 @@ PGOUM de 2009:
 * [Plan Director](http://www.urbanalibi.es/plan-director-para-la-calidad-del-paisaje-urbano-de-madrid/)
 * [Ficha del Proyecto en Prointec](https://www.prointec.es/es/project/calidad-paisaje-urbano-madrid-espana)
 
---------------------------------------------------------------------------------------
-### :star: Project Pipeline
-![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109612/WhatsApp_Image_2020-10-31_at_02.03.23_rwukmf.jpg)
-
---------------------------------------------------------------------------------------
-### Project Result
-![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
-
---------------------------------------------------------------------------------------
+----
 ### :computer: **Technology stack**
 As a prerequisite, the programming lenguage of this repository is Python 3.7.3, therefore must have Python 3 installed. The native packages in use are:
-- [Argparse](https://docs.python.org/3.7/library/argparse.html)
-- [Datetime](https://docs.python.org/2/library/datetime.html)
 - [Os](https://docs.python.org/3/library/os.html)
 - [Functools](https://docs.python.org/3/library/functools.html)
-- [Concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html)
 - [Re](https://docs.python.org/3/library/re.html)
 
 Furthermore, it is need to be installed in the proper environment the following libraries:
-- [SQL Alchemy (v.1.3.17)](https://docs.sqlalchemy.org/en/13/intro.html)
+
 - [Pandas (v.0.24.2)](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
 - [Numpy (v.1.18.1)](https://numpy.org/doc/stable/)
-- [Requests (v.2.23.0)](https://requests.readthedocs.io/)
-- [Beautiful Soup (v.4.9.1)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Scikit-learn (v.0.23.1)](https://towardsdatascience.com/preprocessing-with-sklearn-a-complete-and-comprehensive-guide-670cb98fcfb9)
 - [Matplotlib (v.3.1.2)](https://matplotlib.org/contents.html)
+- [Plotly (v.3.1.2)](https://matplotlib.org/contents.html)
+- [Streamlit (v.3.1.2)](https://matplotlib.org/contents.html)
 
---------------------------------------------------------------------------------------
+-----
 #### :construction: Status
 Version 1.0 [04.07.2020] > First version done for class presentation
 ```
@@ -114,6 +108,9 @@ ISSUES
 + To do: Map has performance issues regarding making filtering better
 + Data: raw/ clean data to large for repo
 + Streamlit front need of review
++ Tranlate: - Links 
+            - Data Sources
++ At least, upload final GDF
 ```
 
 ---
