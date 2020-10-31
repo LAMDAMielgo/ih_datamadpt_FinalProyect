@@ -77,7 +77,7 @@ PGOUM de 2009:
 * [Ficha del Proyecto en Prointec](https://www.prointec.es/es/project/calidad-paisaje-urbano-madrid-espana)
 
 --------------------------------------------------------------------------------------
-### Project Pipeline
+### :star: Project Pipeline
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109612/WhatsApp_Image_2020-10-31_at_02.03.23_rwukmf.jpg)
 
 --------------------------------------------------------------------------------------
@@ -85,15 +85,98 @@ PGOUM de 2009:
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
 
 --------------------------------------------------------------------------------------
-### Technology Stack
+### :computer: **Technology stack**
+As a prerequisite, the programming lenguage of this repository is Python 3.7.3, therefore must have Python 3 installed. The native packages in use are:
+- [Argparse](https://docs.python.org/3.7/library/argparse.html)
+- [Datetime](https://docs.python.org/2/library/datetime.html)
+- [Os](https://docs.python.org/3/library/os.html)
+- [Functools](https://docs.python.org/3/library/functools.html)
+- [Concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html)
+- [Re](https://docs.python.org/3/library/re.html)
+
+Furthermore, it is need to be installed in the proper environment the following libraries:
+- [SQL Alchemy (v.1.3.17)](https://docs.sqlalchemy.org/en/13/intro.html)
+- [Pandas (v.0.24.2)](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
+- [Numpy (v.1.18.1)](https://numpy.org/doc/stable/)
+- [Requests (v.2.23.0)](https://requests.readthedocs.io/)
+- [Beautiful Soup (v.4.9.1)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Scikit-learn (v.0.23.1)](https://towardsdatascience.com/preprocessing-with-sklearn-a-complete-and-comprehensive-guide-670cb98fcfb9)
+- [Matplotlib (v.3.1.2)](https://matplotlib.org/contents.html)
 
 --------------------------------------------------------------------------------------
-### Status
+#### :construction: Status
+Version 1.0 [04.07.2020] > First version done for class presentation
+```
+ISSUES
+----------------
++ Spider Plot finally dropped of Web
++ To do: Deploy with Hedoku
++ To do: Map has performance issues regarding making filtering better
++ Data: raw/ clean data to large for repo
++ Streamlit front need of review
+```
 
---------------------------------------------------------------------------------------
-### Contact Info
+---
+### :love_letter: **Contact info**
+linkedin.com/in/lauramielgo for inqueries.
 
---------------------------------------------------------------------------------------
-### Folder Structure
+### :hearts: **Thanks**
+Big thanks to TAs and teachers for the help and support in the development of this project:
 
+@github/potacho
+
+@github/TheGurus
+
+---
+#### :file_folder: **Folder structure**
+The project's structure is as follows:
+```
+└── project
+    ├── __trash__
+    ├── .gitignore
+    ├── .env
+    ├── requeriments.txt
+    ├── README.md
+    ├── str_app.py
+    ├── notebooks
+    │   ├── 01_Catastro pt1.ipynb
+    │   ├── 02_Catastro pt2.ipynb
+    │   ├── 03_Arturo Model - Gradient Boosting.ipynb
+    │   ├── 04_Merging DataSets.ipynb 
+    │   ├── 05_Clustering Results - Viz.ipynb    
+    │   └── 06_Final Map.ipynb
+    ├── models
+    │   ├── 011_Partitioning Algos.ipynb
+    │   ├── 012_Density Algos - UMAP 10.py
+    │   ├── 022_Density Algos - UMAP 25.py
+    │   ├── 122_Density Algos - Catastro.py
+    │   ├── model_dbscan_silh167.sav
+    │   ├── model_dbscan_silh193.sav
+    │   └── mmdel_dbscan_silh261.sav
+    ├── catastro_inspire_etl
+    │   ├── m_acquisition.py
+    │   ├── m_cleaning.py
+    │   └── __init__.py
+    ├── streamlit_back
+    │   ├── m_opening_final.py
+    │   └── __init__.py
+    ├── streamlit_front
+    │   ├── load_css.py
+    │   ├── style.css.py
+    │   └── __init__.py
+    ├── streamlit_graphics
+    │   ├── main_map.py
+    │   ├── ranking_fig.py
+    │   ├── spider_plot.py
+    │   ├── map_to_render.html
+    │   ├── ranking_fig.html
+    │   └── __init__.py
+    └── data
+        ├── raw
+        ├── labelled
+        ├── final_streamlit
+        └── clean
+
+
+```
 
