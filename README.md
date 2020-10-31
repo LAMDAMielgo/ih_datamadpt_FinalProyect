@@ -5,9 +5,9 @@
 ---------------------------------------------------------------------------
 ####ABOUT
 
-El objetivo de este proyecto es ver la capidad que tienen el aprendizaje automático para 
-realizar un Plano de Calidad del Paisaje Urbano de forma análoga al existente para la
-ciudad de Madrid, realizado por Prointec dentro del marco de la revisión del PGOUM de 2009.
+The objective of this project is to see the ability of machine learning to make an Urban 
+Landscape Quality Plan in a comparable way to the existing one for the city of Madrid, 
+made by Prointec within the framework of the revision of the PGOUM of 2009.
 
 
 ---------------------------------------------------------------------------
@@ -15,71 +15,72 @@ ciudad de Madrid, realizado por Prointec dentro del marco de la revisión del PG
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
 
 --------------------------------------------------------------------------------------
-**¿Por qué medir la calidad del paisaje urbano?**
+What is **landscape**? "Any part of the territory, as perceived by the population, whose 
+character is the result of the action and interaction of natural and/or human factors', as 
+defined by the ELC (European Landscape Convention, 2008), founded with the purpose of 
+establishing the management, planning and protection of European landscapes.
 
-La ciudad que habitamos se puede entender, entre otras cosas, como una experiencia estética y
-una construcción cultural portadora de significados. El análisis de su morfología, por un lado,
-nos permite entender y asumir el relato paisajísticos de ésta, siendo el Plan una herramienta
-de gestión más dentro de toda la documentación que integra un Plan General Urbanístico.
+The **urban landscape** makes specific reference to the image of the city as a result of its 
+environmental, natural and built elements as well as its social values. An image not only 
+determined by the relationship of all these elements but also by the subjective value that we 
+collectively extract from it. In the end, the ‘landscape culture’ helps us to understand cities 
+as an aesthetic experience and a cultural construction that carries meaning. 
 
-Conectar morfología urbana y calidad del espacio público, nor permite
+The **analysis of the quality of the city landscape** allows us to rationalize this subjective 
+value of the form of the city and transform it into a tool for its protection and management, 
+ultimately affecting the development of plans and policies through which it is regulated.
 
-La calidad del paisaje urbano permite contectar **morfología urbana con espacio público**,
-permitiendo añadir recomendaciones y directrices que permitan a construir una cuidad 
-mejor a partir de las herramientas urbanísticas pertenecientes a la gestión del patrimonio
-edificado: las ordenanzas urbanísticas, modificando aquéllos parámetros que sean relevante:
+There are already interventions and initiatives that have focused on collecting public opinion 
+as a source for the development of databases, as well as promoting citizen participation in the 
+dministration of cities and generating useful products through it. 
 
-* Mobiliario Urbano y Jardinería
-* Accesibilidad y eliminación de barreras arquitectónicas
-* Licencias
-* Rehabilitación
-* Integración de instalaciones (teleco, alumbraod, señaléctica)
+**UQO** starts from the data provided by the cadastre and previous projects and makes use of a 
+regression model (Light XG Boost / Gradient Boost) and two clustering models (partition and 
+density). The resulting map provides direct knowledge and insight on which to draw useful 
+conclusions that impact on decision making process of our cities.
 
-
-La unificación de datos obtenidos mediante participación ciudadana y datos catastrales,
-permite incorporar la opinión pública en el diagnóstico de su ciudad, fomentando el diágolo
-y las políticas públicas abiertas. Así mismo, la elaboración de este tipo de planes, 
-constituyen un compromiso colectivo para proyecta la imagen de la ciudad.
+The artificial intelligence allows us to extract useful perspectives and develop tools 
+from the collective intelligence, in this case, for its application in the urban field.
 
 ### :star: Project Pipeline
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109612/WhatsApp_Image_2020-10-31_at_02.03.23_rwukmf.jpg)
 
 --------------------------------------------------------------------------------------
 ### DOCUMENTATION SOURCES
-* [Encuesta Abierta sobre Calidad del Espacio Público](http://arturo.300000kms.net/#1)
+* [Open Survey on Quality of Public Space](http://arturo.300000kms.net/#1)
 
-Realizado por el [estudio 300.000km/s](), Arturo es un algoritmo entrenado entrenado a 
-partir de una encuesta ciudadana sobre evaluación comparativa de calles de Madrid, que
-han sido previamente labelizadas con diferentes parámetros urbanísticos.
+Conducted by the practice 300,000km/s, Arturo is a trained algorithm based on a citizen 
+survey on comparative evaluation of streets in Madrid, which have been previously labeled 
+with different urban parameters.
 
-La encuesta recoge el 10% de las calles de Madrid, y mediante el uso de Gradient 
-Boost se buscan los patrones comunes en el resto de calles de la ciudad; de esta manera
-se obtiene un plano interactivo de la calidad del espacio público así como se determina
-qué índices son más importantes para determinar dicha calidad.
+The survey collects 10% of the streets of Madrid, and through the use of Gradient Boost 
+the common patterns in the rest of the streets of the city are searched; in this way an 
+interactive map of the quality of public space is obtained as well as determining which 
+indexes are more important to determine such quality.
 
-* [Datos Abiertos del Castastro](http://www.catastro.minhap.es/webinspire/index.html)
+* [Casdastre Open Data](http://www.catastro.minhap.es/webinspire/index.html)
 
-La Dirección General del Catastro ofrece diferentes conjuntos de datos respecto a los datos
-que gestiona sobre el patrimonio edificado dentro del marco europeo Inspire.
-En el enlace se especifica qué recursos ofrece; para este proyecto, se trabajan con las 6 capas 
-disponibles, obtenidas a partir de qGIS:
-* Buildings
-* Building Parts
-* Cadastral Zoning
-* Cadastral Parcels
-* 28900 
+The General Directorate of Cadastre offers different sets of data regarding the data it 
+manages on built heritage within the Inspire European framework. The link specifies what 
+resources it offers; for this project, we work with the 6 available layers, obtained from 
+qGIS: 
+* Buildings, 
+* Building Parts, 
+* Cadastral Zoning, 
+* Cadastral Parcels, 
+* 28900
 
 ----
-### Links de interés
-Experiencias anteriores basadas en NYC:
+### Links of interest
+Previous experiences based in NYC:
 
-* [Street Score](http://streetscore.media.mit.edu/): Realizado en 
-* [Urbanopticon](https://goodcitylife.org/)
+* [Street Score](http://streetscore.media.mit.edu/): by Camera Culture and Macro Connections 
+from the Media Lab, it measures the degree of safety or danger of the streets.
+* [Urbanopticon](https://goodcitylife.org/): Collective mental map of NYC.
 
-Estudio sobre Calidad del Paisaje urbano realizado dentro del marco de la revisión del
-PGOUM de 2009:
-* [Plan Director](http://www.urbanalibi.es/plan-director-para-la-calidad-del-paisaje-urbano-de-madrid/)
-* [Ficha del Proyecto en Prointec](https://www.prointec.es/es/project/calidad-paisaje-urbano-madrid-espana)
+Urban Landscape Quality Study conducted as part of the 2009 PGOUM review:
+* [Master Plan](http://www.urbanalibi.es/plan-director-para-la-calidad-del-paisaje-urbano-de-madrid/)
+* [Prointec Project Data Sheet](https://www.prointec.es/es/project/calidad-paisaje-urbano-madrid-espana)
 
 ----
 ### :computer: **Technology stack**
@@ -108,8 +109,6 @@ ISSUES
 + To do: Map has performance issues regarding making filtering better
 + Data: raw/ clean data to large for repo
 + Streamlit front need of review
-+ Tranlate: - Links 
-            - Data Sources
 + At least, upload final GDF
 ```
 
