@@ -1,17 +1,14 @@
 ## URBAN LANDSCAPE QUALITY INDEX
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109631/WhatsApp_Image_2020-10-31_at_01.43.00_zrqa3c.jpg)
 
----------------------------------------------------------------------------
----------------------------------------------------------------------------
 ####ABOUT
 
 The objective of this project is to see the ability of machine learning to make an Urban 
 Landscape Quality Plan in a comparable way to the existing one for the city of Madrid, 
-made by Prointec within the framework of the revision of the PGOUM of 2009.
+made by Prointec within the framework of the revision of the PGOUM of 2009. 
 
+The project is presented through a **web data app** in which filtering and popups are enabled.
 
----------------------------------------------------------------------------
-### Project Result
 ![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
 
 --------------------------------------------------------------------------------------
@@ -84,18 +81,26 @@ Urban Landscape Quality Study conducted as part of the 2009 PGOUM review:
 
 ----
 ### :computer: **Technology stack**
-As a prerequisite, the programming lenguage of this repository is Python 3.7.3, therefore must have Python 3 installed. The native packages in use are:
+As a prerequisite, the programming lenguage of this repository is Python 3.7.9, therefore must have Python 3 installed. The native packages in use are:
 - [Os](https://docs.python.org/3/library/os.html)
 - [Functools](https://docs.python.org/3/library/functools.html)
 - [Re](https://docs.python.org/3/library/re.html)
+- [Itertools](https://docs.python.org/3/library/itertools.html)
+- [Webbrowser](https://docs.python.org/2/library/webbrowser.html)
 
 Furthermore, it is need to be installed in the proper environment the following libraries:
 
 - [Pandas (v.0.24.2)](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
 - [Numpy (v.1.18.1)](https://numpy.org/doc/stable/)
-- [Scikit-learn (v.0.23.1)](https://towardsdatascience.com/preprocessing-with-sklearn-a-complete-and-comprehensive-guide-670cb98fcfb9)
+- [Geopandas](https://geopandas.org/index.html)
+- [GeoJson](https://github.com/jazzband/geojson)
 - [Matplotlib (v.3.1.2)](https://matplotlib.org/contents.html)
+- [Seaborn](https://seaborn.pydata.org/)
 - [Plotly (v.3.1.2)](https://matplotlib.org/contents.html)
+- [Branca](https://pypi.org/project/branca/)
+- [Scikit-learn (v.0.23.1)](https://towardsdatascience.com/preprocessing-with-sklearn-a-complete-and-comprehensive-guide-670cb98fcfb9)
+- [UMAP](https://umap-learn.readthedocs.io/en/latest/)
+- [Folium](https://python-visualization.github.io/folium/#:~:text=folium%20makes%20it%20easy%20to,as%20markers%20on%20the%20map.)
 - [Streamlit (v.3.1.2)](https://matplotlib.org/contents.html)
 
 -----
