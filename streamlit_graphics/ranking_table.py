@@ -45,7 +45,10 @@ def  ranking_table(gdf, col_to_filtr, linearcolormap):
 
     fig.update_yaxes(visible=False, showticklabels=False, row = 1, col = 1)
     fig.update_xaxes(visible=False, showticklabels=False, row = 1, col = 1)
-    fig.update_layout(width=2000, height=1000)
+    fig.update_xaxes(tickangle=270,
+                     tickfont=dict(family='Courier New, monospace', color='black', size=16),
+                     row = 2, col = 1)
+    fig.update_layout(width=2200, height= 850)
     print(
         f"\t RANK TABLE \tRENDERED --------------------------------------------------------------------------------")
     fig.write_html(f'{MAP_SAVE_PATH}ranking_fig.html')

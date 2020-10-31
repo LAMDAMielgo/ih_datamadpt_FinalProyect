@@ -9,6 +9,7 @@ body {
   border-radius: 0rem;
   color: black;
   padding: 0.2rem;
+  text-align: right;
 }
 .highlight_title {
   background-color: #350B82;
@@ -29,7 +30,7 @@ body {
 }
 .cuerpo {
   font-width: 75%;
-  font-size: 12px;
+  font-size: 14px;
   color: black;
   font-weight: 250;
   text-align: right;

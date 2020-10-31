@@ -12,10 +12,11 @@ from sklearn.preprocessing import StandardScaler
 import branca.colormap as cm
 
 # files
-from p_acquisition import m_opening_final as m_op_f
+from streamlit_back import m_opening_final as m_op_f
 from streamlit_graphics import spider_plot as s_pl
 from streamlit_graphics import main_map as map
 from streamlit_front import load_css as load
+from streamlit_graphics import ranking_table as r_table
 
 # ----------------------------------------------------------------------------------------------------------- SET WEB STRUCTURE
 
@@ -82,54 +83,104 @@ st.markdown("""<style>
 # ----------------------------------------------------------------------------------------------------------- C1
 with c1:
     st.markdown("<pre class='highlight_title'>"
-                "<span class= 'bold'><span class='title'> ·UQO· </span><br>"
+                "<span class= 'bold'><span class='title'><br> ·UQO· </span><br>"
                 "<span class= 'subtitle'> urban  quality  operational  tool <br>"
-                "~</span></span><br>"
+                "~</span></span><br><br>"
                 "<span class= 'subtitle'> likeability of urban morphology based <br> on an <span class= 'bold'>open citizen survey</span></pre>"
                 , unsafe_allow_html=True)
 
     st.markdown("<pre class='highlight_text'>"
-                "<span class='cuerpo'>This project facilitates the creation and extraction of <br>"
-                "knowledge that comes from collective intelligence thank <br>"
-                "to the application of two machine learning models. Thi is<br>"
-                "a tool that facilitates citizen action and provides<br>"
-                "insight to help in the decision making process of the<br>"
-                "development and management of our cities.</span></span></pre>"
+                "<span class='cuerpo'>"
+                "This project facilitates the creation and<br>"
+                "extraction of knowledge that comes from collective<br>"
+                "intelligence thank to the application of two machine<br>"
+                "learning models.<br><br>"
+                "This is a tool that facilitates citizen action and<br>"
+                "provides insight to help in the decision making process<br>"
+                "of the development and management of our cities.<br><br>"
+                "The map display the best clusterization obtained,<br>"
+                "highlighting the urban quality value obtained<br>"
+                "through the image survey done to citizens. <br>"
+                "</span></span></pre>"
                 , unsafe_allow_html=True)
 
 
-
-    st.markdown(f"<span class='cuerpo'>URBAN QUALITY MAP KEY<br></span>"
+    st.markdown(f"<span class='bold'><br>URBAN QUALITY MAP KEY<br></span>"
                 f"<div class='legend' style='position: static; height: 20px;'>"
-                f"<span class='bold'> - {100 * '&nbsp;'} + </span><br><br>"
-                "<br><span class='cuerpo'>FILTER CONTROLS<br> ~ <br>", unsafe_allow_html=True)
+                f"<span class='bold'> - {100 * '&nbsp;'} + </span>", unsafe_allow_html=True)
+
+    st.markdown(f"<br><span class='bold'>FILTER CONTROLS<br> ~ <br></span>", unsafe_allow_html=True)
 
     # FILTERS FOR MAP IN HERE
-    uses_to_show = st.selectbox(f"CHARACTERISTIC USE CLUSTER", ('all', 'residential', 'terciary'))  # Change this
-    morpho_cluster = st.slider("URBAN MORPHOLOGY CLUSTERS", 0, 12)
+    uses_to_show = st.selectbox(f"CHARACTERISTIC USE", ('all', 'residential', 'terciary'))
 
     # !!!!!!!
-    cluster_all = bu_parcel.groupby('cluster_build').describe()[
-        ['n_BuildingUnits', 'n_Dwellings', 'nFloors_AG', 'nFloors_BG', 'area_m2c', 'area_m2p']].T
+    #cluster_all = bu_parcel.groupby('cluster_build').describe()[
+    #    ['n_BuildingUnits', 'n_Dwellings', 'nFloors_AG', 'nFloors_BG', 'area_m2c', 'area_m2p']].T
 
-    values_to_hold = ['50%', 'min', 'max']
-    tables_to_spider_plot = [pd.DataFrame(StandardScaler() \
-                                          .fit_transform(cluster_all \
-                                                         .iloc[cluster_all.index \
-                                                         .isin([val], level=1)].T)) for val in values_to_hold]
+    #values_to_hold = ['50%', 'min', 'max']
+    #tables_to_spider_plot = [pd.DataFrame(StandardScaler() \
+    #                                      .fit_transform(cluster_all \
+    #                                                     .iloc[cluster_all.index \
+    #                                                     .isin([val], level=1)].T)) for val in values_to_hold]
 
-    s_pl.make_spider_plot(table=tables_to_spider_plot[0],
-                          table_min=tables_to_spider_plot[1],
-                          table_max=tables_to_spider_plot[2],
-                          row=morpho_cluster,
-                          title=f'Group {morpho_cluster + 1}',
-                          color=['#350B82', '#f63366', '#F19AAD'],
-                          # CAP[0:88:20]
-                          # Selected three colors because of control
-                          alpha=[0.25, 0.30, 0.45])
+    # s_pl.make_spider_plot(table=tables_to_spider_plot[0],
+    #                      table_min=tables_to_spider_plot[1],
+    #                      table_max=tables_to_spider_plot[2],
+    #                      row=morpho_cluster,
+    #                      title=f'Group {morpho_cluster + 1}',
+    #                      color=['#350B82', '#f63366', '#F19AAD'],
+    #                      # CAP[0:88:20]
+    #                      # Selected three colors because of control
+    #                      alpha=[0.25, 0.30, 0.45])
 
-# -----------------------------------------------------------------------------------------------------------
-# SIDEBAR
+
+# ----------------------------------------------------------------------------------------------------------- FILTER FOR GDF
+# SET GEODATAFRAME TO SHOW
+if uses_to_show == 'all':
+    gdf_to_show = bu_parcel
+
+elif uses_to_show == 'terciary':
+    filtr = (bu_parcel['currentUse'] != 'residential')
+    gdf_to_show = bu_parcel[filtr]
+
+elif uses_to_show == 'residential':
+    filtr = (bu_parcel['currentUse'] == uses_to_show)
+    gdf_to_show = bu_parcel[filtr]
+
+else:
+    print("Error in uses filter")
+
+# ----------------------------------------------------------------------------------------------------------- EXPANDER
+
+my_expander = st.beta_expander(f" WHICH URBAN PARAMETERS MOST IMPACT ON QUALITY?   {100 * '/'}")
+
+with my_expander:
+
+    r_table.ranking_table(gdf=gdf_to_show,
+                          col_to_filtr='cluster_all',
+                          linearcolormap=LinearCMAP)
+    # RENDER MAIN TABLE
+    HtmlFile_table = open("streamlit_graphics/ranking_fig.html", 'r', encoding='utf-8')
+    components.html(HtmlFile_table.read(),
+                    width=2500,
+                    height=750,
+                    scrolling=False)
+# ----------------------------------------------------------------------------------------------------------- COLUMN 2
+# PLACE MAP AND TABLES
+with c2:
+    # RENDER MAIN MAP
+    map.get_main_map(gfd=gdf_to_show,
+                     center_location=[40.4168, -3.7038],
+                     tile='CartoDB PositronNoLabels',
+                     color_palette=CPAL)
+
+    HtmlFile_map = open("streamlit_graphics/map_to_render.html", 'r', encoding='utf-8')
+    components.html(HtmlFile_map.read(),
+                    width=2000,
+                    height=850,
+                    scrolling=False)
+# ----------------------------------------------------------------------------------------------------------- SIDEBAR
 st.markdown("""<style>
             .sidebar .sidebar-content {
                 background-image: linear-gradient(25deg, hsla(344, 92%, 58%, 1) 5%, hsla(1, 72%, 87%, 1) 100%);
@@ -160,36 +211,5 @@ st.sidebar.markdown("<p style='font-size:24px'>&#10024;</p><br>"
                     "<img border='0' src='http://arturo.300000kms.net/img/qr.png' width='150' height='150'></a>"
                     "<br><br><br><br>", unsafe_allow_html=True)
 
-
-
 if st.sidebar.button("+"):
     webbrowser.open_new_tab(GITHUB_REPOSITORY)
-
-# -----------------------------------------------------------------------------------------------------------
-# GET MAP FROM HTML DOCUMENT
-if uses_to_show == 'all':   gdf_to_show = bu_parcel
-elif uses_to_show == 'terciary':    filtr = (bu_parcel['currentUse'] != 'residential'); gdf_to_show = bu_parcel[filtr]
-elif uses_to_show == 'residential': filtr = (bu_parcel['currentUse'] == uses_to_show); gdf_to_show = bu_parcel[filtr]
-else:   print("Error in uses filter")
-
-map.get_main_map(gfd=gdf_to_show,
-                 center_location=[40.4168, -3.7038],
-                 tile='CartoDB PositronNoLabels',
-                 color_palette=CPAL)
-
-with c2:
-    HtmlFile = open("streamlit_graphics/map_to_render.html", 'r', encoding='utf-8')
-    components.html(HtmlFile.read(),
-                    width=2000,
-                    height=950,
-                    scrolling=False)
-
-    my_expander = st.beta_expander(f"{296 * '/'}  WHICH URBANPARAMETERS MOST IMPACT ON QUALITY?")
-    with my_expander:
-        st.markdown(
-            "<pre class='highlight_text'>"
-            "<span class= 'bold'>"
-            "<span class='bold'> Here more text and tables </span>"
-            "</pre>", unsafe_allow_html=True)
-
-# -----------------------------------------------------------------------------------------------------------

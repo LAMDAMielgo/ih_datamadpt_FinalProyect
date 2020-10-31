@@ -5,7 +5,7 @@ import folium.folium
 from folium.plugins import Fullscreen
 #---------------------------------------------------------------------------------------------------- DEPENDENCIES
 
-MAP_SAVE_PATH = 'streamlit_graphics/'  # three files (there should be only two: catastro and arturo). DIFFERENT SHAPES
+MAP_SAVE_PATH = 'streamlit_graphics/'
 
 def get_main_map(gfd, center_location, tile, color_palette):
     """
