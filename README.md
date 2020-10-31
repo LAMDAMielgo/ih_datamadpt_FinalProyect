@@ -1,10 +1,7 @@
 ## URBAN LANDSCAPE QUALITY INDEX
-![](https://www.euribor.com.es/wp-content/uploads/2018/05/127E742F-48D9-4B93-BE43-87885C52CE60-625x391.jpeg)
-```
+![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109631/WhatsApp_Image_2020-10-31_at_01.43.00_zrqa3c.jpg)
+
 ---------------------------------------------------------------------------
-WORK IN PROGRESS
----------------------------------------------------------------------------
-```
 ---------------------------------------------------------------------------
 ####ABOUT
 
@@ -13,7 +10,7 @@ realizar un Plano de Calidad del Paisaje Urbano de forma análoga al existente p
 ciudad de Madrid, realizado por Prointec dentro del marco de la revisión del PGOUM de 2009.
 
 
-
+---------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 **¿Por qué medir la calidad del paisaje urbano?**
 
@@ -68,8 +65,6 @@ disponibles, obtenidas a partir de qGIS:
 
 
 --------------------------------------------------------------------------------------
-
-
 ### Links de interés
 Experiencias anteriores basadas en NYC:
 
@@ -80,3 +75,25 @@ Estudio sobre Calidad del Paisaje urbano realizado dentro del marco de la revisi
 PGOUM de 2009:
 * [Plan Director](http://www.urbanalibi.es/plan-director-para-la-calidad-del-paisaje-urbano-de-madrid/)
 * [Ficha del Proyecto en Prointec](https://www.prointec.es/es/project/calidad-paisaje-urbano-madrid-espana)
+
+--------------------------------------------------------------------------------------
+### Project Pipeline
+![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109612/WhatsApp_Image_2020-10-31_at_02.03.23_rwukmf.jpg)
+
+--------------------------------------------------------------------------------------
+### Project Result
+![](https://res.cloudinary.com/dute7e5ne/image/upload/v1604109643/HowToGif_zrjbhv.gif)
+
+--------------------------------------------------------------------------------------
+### Technology Stack
+
+--------------------------------------------------------------------------------------
+### Status
+
+--------------------------------------------------------------------------------------
+### Contact Info
+
+--------------------------------------------------------------------------------------
+### Folder Structure
+
+
