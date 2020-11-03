@@ -100,6 +100,7 @@ Furthermore, it is need to be installed in the proper environment the following 
 - [Branca](https://pypi.org/project/branca/)
 - [Scikit-learn (v.0.23.1)](https://towardsdatascience.com/preprocessing-with-sklearn-a-complete-and-comprehensive-guide-670cb98fcfb9)
 - [UMAP](https://umap-learn.readthedocs.io/en/latest/)
+- [LightGBM](https://lightgbm.readthedocs.io/en/latest/)
 - [Folium](https://python-visualization.github.io/folium/#:~:text=folium%20makes%20it%20easy%20to,as%20markers%20on%20the%20map.)
 - [Streamlit (v.3.1.2)](https://matplotlib.org/contents.html)
 

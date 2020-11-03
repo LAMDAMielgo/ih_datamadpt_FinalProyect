@@ -16,5 +16,6 @@ branca=0.3.1
 
 scikit-learn=0.23.2
 umap-learn=0.4.6
+lightgbm=2.3.0
 
 streamlit=0.69.2
